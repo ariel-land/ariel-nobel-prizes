@@ -1,118 +1,40 @@
 "use strict";
 // Please don't delete the 'use strict' line above
 
-function displayPhysics(year) {
-  // object.preventDefault();
-  for (const object of nobels.prizes) {
-    if (object.year === year.toString()) {
-      //    console.log(object.category);
-      if (object.category === "physics") {
-        for (const name of object.laureates) {
-          //      console.log(name.firstname);
-          let winners = document.querySelector("#physicsWinner");
-          winners.innerHTML = `${name.firstname} ${name.surname}`;
-        }
-      }
-    }
-    // if (object.year !== year.toString()) {
-    //   let winners = document.querySelector("#physicsWinner");
-    //   winners.innerHTML = "No winner was found";
-    // }
-  }
-}
+function displayWinners(year, subject) {
+  let documentTarget = "#" + subject + "Winner";
+  let winners = document.querySelector(documentTarget);
+  winners.innerHTML = "There's no winner in this category this year";
+  let winnersList = [];
 
-function displayChemistry(year) {
-  // object.preventDefault();
   for (const object of nobels.prizes) {
     if (object.year === year.toString()) {
-      //    console.log(object.category);
-      if (object.category === "chemistry") {
+      if (object.category === subject) {
         for (const name of object.laureates) {
-          //      console.log(name.firstname);
-          let winners = document.querySelector("#chemistryWinner");
-          winners.innerHTML = `${name.firstname} ${name.surname}`;
+          winnersList.push(`${name.firstname} ${name.surname}`);
         }
       }
     }
   }
-}
-
-function displayMedicine(year) {
-  // object.preventDefault();
-  for (const object of nobels.prizes) {
-    if (object.year === year.toString()) {
-      //    console.log(object.category);
-      if (object.category === "medicine") {
-        for (const name of object.laureates) {
-          //      console.log(name.firstname);
-          let winners = document.querySelector("#medicineWinner");
-          winners.innerHTML = `${name.firstname} ${name.surname}`;
-        }
-      }
-    }
+  if (winnersList.length > 0) {
+    winners.innerHTML = winnersList.join("<br>");
   }
 }
 
-function displayPeace(year) {
-  // object.preventDefault();
-  for (const object of nobels.prizes) {
-    if (object.year === year.toString()) {
-      //    console.log(object.category);
-      if (object.category === "peace") {
-        for (const name of object.laureates) {
-          //      console.log(name.firstname);
-          let winners = document.querySelector("#peaceWinner");
-          winners.innerHTML = `${name.firstname} ${name.surname}`;
-        }
-      }
-    }
-  }
-}
-
-function displayLiterature(year) {
-  // object.preventDefault();
-  for (const object of nobels.prizes) {
-    if (object.year === year.toString()) {
-      //    console.log(object.category);
-      if (object.category === "literature") {
-        for (const name of object.laureates) {
-          //      console.log(name.firstname);
-          let winners = document.querySelector("#literatureWinner");
-          winners.innerHTML = `${name.firstname} ${name.surname}`;
-        }
-      }
-    }
-  }
-}
-
-function displayEconomics(year) {
-  // object.preventDefault();
-  for (const object of nobels.prizes) {
-    if (object.year === year.toString()) {
-      //    console.log(object.category);
-      if (object.category === "economics") {
-        for (const name of object.laureates) {
-          //      console.log(name.firstname);
-          let winners = document.querySelector("#economicsWinner");
-          winners.innerHTML = `${name.firstname} ${name.surname}`;
-        }
-      }
-    }
-  }
-}
-
-//still need to fix this function
 function search(year) {
-  // year.preventDefault();
+  let categories = [
+    "physics",
+    "chemistry",
+    "medicine",
+    "peace",
+    "literature",
+    "economics",
+  ];
   let currentYear = document.querySelector(".current-year");
   currentYear.innerHTML = year;
-  // write the display function to go in here
-  displayPhysics(year);
-  displayChemistry(year);
-  displayMedicine(year);
-  displayPeace(year);
-  displayLiterature(year);
-  displayEconomics(year);
+  for (const subject of categories) {
+    displayWinners(year, subject);
+  }
 }
 
 function handleSubmit(event) {
