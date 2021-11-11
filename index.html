@@ -13,6 +13,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/4650162b61.js"
       crossorigin="anonymous"
@@ -24,9 +27,19 @@
   </head>
 
   <body>
+    <div class="heading-wrapper">
+    <ul>
+      <li class="heading"><a href="https://www.nobelprize.org/prizes/" target="_blank">Nobel Prizes & Laureates</a></li>
+      <li class="heading"><a href="https://www.nobelprize.org/nomination/" target="_blank">Nomination</a></li>
+      <li class="heading"><a href="https://www.nobelprize.org/alfred-nobel/" target="_blank">Alfred Nobel</a></li>
+      <li class="heading"><a href="https://www.nobelprize.org/news-and-insights/" target="_blank">News & Insights</a></li>
+      <li class="heading"><a href="https://www.nobelprize.org/education-network/" target="_blank">Education Network</a></li>
+    </ul>
+    </div>
+    
     <div class="container" style="max-width: 50rem">
       <div class="winners-wrapper">
-        <h1>Nobel Prize Winners</h1>
+        <h1>NOBEL PRIZE WINNERS</h1>
         <div class="container year-search">
         <div class="col-xs-3 current-year"><h2> <span id="current-year"></span>2018</span></h2></div>
         <div class="col-xs-3 search-bar">
@@ -46,8 +59,8 @@
         <div class="row">
 
         <div class="col-sm-4">
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Physics</div>    
+        <div class="card text-white mb-3" id="physicsCard" style="max-width: 18rem;">
+        <div class="card-header border-light">Physics</div>    
           <div class="card-body">
          <h6 class="card-subtitle mb-2" id="physicsWinner">Winner Name</h6>
          <p class="card-text" id="physicsQuote">Winner Quote</p>
@@ -57,7 +70,7 @@
 
         <div class="col-sm-4">
   <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Chemistry</div>    
+    <div class="card-header border-light">Chemistry</div>    
     <div class="card-body">
          <h6 class="card-subtitle mb-2" id="chemistryWinner">Winner Name</h6>
          <p class="card-text" id="chemistryQuote">Winner Quote</p>
@@ -66,8 +79,8 @@
         </div>
 
          <div class="col-sm-4">
-          <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-        <div class="card-header">Medicine</div>
+          <div class="card text-white mb-3" id="medicineCard" style="max-width: 18rem;">
+        <div class="card-header border-light">Medicine</div>
             <div class="card-body">
          <h6 class="card-subtitle mb-2" id="medicineWinner">Winner Name</h6>
          <p class="card-text">Winner Quote</p>
@@ -76,8 +89,8 @@
         </div>
           
         <div class="col-sm-4">
-  <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-    <div class="card-header">Peace</div>    
+  <div class="card text-white mb-3" id="peaceCard" style="max-width: 18rem;">
+    <div class="card-header border-light">Peace</div>    
     <div class="card-body">
          <h6 class="card-subtitle mb-2" id="peaceWinner">Winner Name</h6>
          <p class="card-text">Winner Quote</p>
@@ -87,7 +100,7 @@
          
         <div class="col-sm-4">
   <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
-     <div class="card-header">Literature</div>    
+     <div class="card-header border-light">Literature</div>    
     <div class="card-body">
          <h6 class="card-subtitle mb-2" id="literatureWinner">Winner Name</h6>
          <p class="card-text">Winner Quote</p>
@@ -96,8 +109,8 @@
         </div>
 
         <div class="col-sm-4">
-            <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-       <div class="card-header">Economics</div>    
+            <div class="card text-dark mb-3" id="economicsCard" style="max-width: 18rem;">
+       <div class="card-header border-light">Economics</div>    
               <div class="card-body">
        
          <h6 class="card-subtitle mb-2 " id="economicsWinner">Winner Name</h6>
@@ -108,7 +121,7 @@
         </div>
            
           </div>
-        <small>Open Source Code by Ariel Lee</small>
+        <small><a href="https://github.com/ariel-land/ariel-nobel-prizes" target="_blank" id="openSource">Open Source Code</a> by Ariel Lee</small>
       </div>
     </div>
   </body>

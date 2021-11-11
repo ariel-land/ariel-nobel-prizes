@@ -14,6 +14,10 @@ function displayPhysics(year) {
         }
       }
     }
+    // if (object.year !== year.toString()) {
+    //   let winners = document.querySelector("#physicsWinner");
+    //   winners.innerHTML = "No winner was found";
+    // }
   }
 }
 
@@ -115,18 +119,11 @@ function handleSubmit(event) {
   event.preventDefault();
   let yearInputElement = document.querySelector("#search-text-input");
   search(yearInputElement.value);
+  event.target.reset();
 }
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-// function search(event) {
-//   event.preventDefault();
-//   let yearInputElement = document.querySelector("#search-text-input");
-//   // console.log(yearInputElement.value);
-//   let currentYear = document.querySelector("#current-year");
-//   currentYear.innerHTML = yearInputElement.value;
-// }
 
 // function getCategories() {
 //   // for loop over nobels.prizes
